@@ -1,13 +1,14 @@
 package com.example.projet_pid_2025.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.Date;
 
 
-@Entity
+
 @Data
+@Entity
 @Table(name="artistes")
 public class Artiste {
 
