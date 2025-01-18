@@ -9,14 +9,14 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name="artistes")
+@Table(name="artiste")
 public class Artiste {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    private String Nom ;
-    private String Prenom ;
-    private Date DateDeNaissance ;
+    private String Firstname ;
+    private String Lastname ;
+
 }
