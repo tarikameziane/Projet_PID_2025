@@ -3,11 +3,13 @@ package com.example.projet_pid_2025.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
 
 
-
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
 @Table(name="artiste")
 public class Artiste {
@@ -16,7 +18,7 @@ public class Artiste {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    private String Firstname ;
-    private String Lastname ;
+    private String firstname ;
+    private String lastname ;
 
 }

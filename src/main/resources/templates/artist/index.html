@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.mx/thymeleaf/layout">
+<html lang="fr" xmlns:layout="http://www.ultraq.net.mx/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
 <head>
-  <meta charset="utf-8">
-  <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Projet Réservations</title>
-  <th:block layout:fragment="css">
-  </th:block>
+  <title>Liste des artistes</title>
 </head>
 <body>
-<div th:replace="fragments/header :: header">Header here</div>
 <div class="container">
-  <div layout:fragment="content">Main content will be inserted here.</div>
+  <div layout:fragment="content">
+    <h1 th:text="${title}">Liste des artistes</h1>
+
+    <table th:unless="${#lists.isEmpty(artists)}">
+      <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="artist : ${artists}">
+        <td th:text="${artist.firstname}">Bob</td>
+        <td><a th:text="${artist.lastname}"
+               th:href="@{/artists/{id}(id=${artist.id})}">Sull</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<div th:replace="fragments/footer :: footer">&copy; 2016 The Static Templates</div>
-<th:block layout:fragment="scripts">
-</th:block>
 </body>
 </html>

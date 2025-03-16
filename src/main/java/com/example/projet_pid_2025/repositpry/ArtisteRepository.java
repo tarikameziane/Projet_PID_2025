@@ -6,10 +6,11 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface ArtisteRepositpry extends CrudRepository<Artiste,Long> {
+public interface ArtisteRepository extends CrudRepository<Artiste, Long> {
 
-    List<Artiste> findAll();
+    List<Artiste> findByLastname(String lastname);
 
     @Override
     Optional<Artiste> findById(Long id);
+
 }
