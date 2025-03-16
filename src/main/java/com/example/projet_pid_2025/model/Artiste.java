@@ -11,7 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name="artiste")
+@Table(name="artists")
 public class Artiste {
 
     @Id
