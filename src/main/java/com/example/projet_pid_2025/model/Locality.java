@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -20,4 +23,9 @@ public class Locality {
     private Long id;
     private String postalCode;
     private String locality;
+
+    @OneToMany( targetEntity=Location.class, mappedBy="locality" )
+    private List<Location> locations = new ArrayList<>();
+
+
 }
