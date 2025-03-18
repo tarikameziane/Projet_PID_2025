@@ -26,6 +26,7 @@ public class LocalityController {
         return "locality/index";
     }
 
+
     @GetMapping("/localities/{id}")
     public String show(Model model, @PathVariable("id") Long id) {
         Locality locality = service.getLocalityById(id);
@@ -37,4 +38,7 @@ public class LocalityController {
     }
 
 }
+
+
+
 
