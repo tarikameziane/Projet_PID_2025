@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,6 +19,13 @@ public class Type {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String type ;
+    private String type;
+
+    @ManyToMany
+    @JoinTable(name = "artist_type",
+            joinColumns = @JoinColumn(name = "type_id"),
+            inverseJoinColumns = @JoinColumn(name = "artist_id")
+    )
+    private List<Artiste> artistes;
 
 }
