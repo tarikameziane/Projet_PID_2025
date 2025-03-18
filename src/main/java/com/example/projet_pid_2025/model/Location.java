@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,6 +36,11 @@ public class Location {
 
     @OneToMany(mappedBy = "location")
     private List<Show> shows;
+    @OneToMany( mappedBy="location")
+    private List<Representation> representations = new ArrayList<>();
+
+
+
 
     public Location(String slug, String designation, String address, Locality locality, String website, String phone) {
         Slugify slg = new Slugify();
