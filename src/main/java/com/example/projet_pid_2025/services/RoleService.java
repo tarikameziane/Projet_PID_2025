@@ -1,6 +1,5 @@
 package com.example.projet_pid_2025.services;
 
-import com.example.projet_pid_2025.model.Role;
 import com.example.projet_pid_2025.repositpry.RoleRepository;
 import org.springframework.stereotype.Service;
 

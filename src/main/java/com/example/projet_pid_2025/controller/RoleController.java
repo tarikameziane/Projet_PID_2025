@@ -1,6 +1,5 @@
 package com.example.projet_pid_2025.controller;
 
-import com.example.projet_pid_2025.model.Role;
 import com.example.projet_pid_2025.services.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
