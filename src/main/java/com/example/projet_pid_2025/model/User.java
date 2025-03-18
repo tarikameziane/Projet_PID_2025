@@ -47,5 +47,27 @@ public class User {
         return this;
     }
 
+    @ManyToMany(mappedBy = "users")
+    private List<Representation> representations = new ArrayList<>();
+    public User addRepresentation(Representation representation) {
+        if(!this.representations.contains(representation)) {
+            this.representations.add(representation);
+            representation.addUser(this);
+        }
+
+        return this;
+    }
+
+    public User removeRepresentation(Representation representation) {
+        if(this.representations.contains(representation)) {
+            this.representations.remove(representation);
+            representation.getUsers().remove(this);
+        }
+
+        return this;
+    }
+
+
+
 
 }
