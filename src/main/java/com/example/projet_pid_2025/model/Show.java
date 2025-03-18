@@ -42,6 +42,10 @@ public class Show {
     private Location location;
 
     @OneToMany(mappedBy="show")
-    private List<Representation> representations = new ArrayList<>();
+    private List<Representation> representations ;
+
+    @ManyToMany(mappedBy = "shows")
+    private List<ArtistType> artistTypes ;
+
 
 }
